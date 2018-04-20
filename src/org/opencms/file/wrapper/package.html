@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<!--
+
+ This library is part of OpenCms -
+ the Open Source Content Management System
+
+ Copyright (c) Alkacon Software GmbH (http://www.alkacon.com)
+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+
+ For further information about Alkacon Software GmbH, please see the
+ company website: http://www.alkacon.com
+
+ For further information about OpenCms, please see the
+ project website: http://www.opencms.org
+
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+-->
+</head>
+<body bgcolor="white">
+
+This package contains classes and interfaces used to access OpenCms through a wrapped 
+{@link org.opencms.file.CmsObject}.<p>
+
+Main entry point is the class {@link org.opencms.file.wrapper.CmsObjectWrapper}. The 
+<code>CmsObjectWrapper</code> is configured with a list of implementations
+of {@link org.opencms.file.wrapper.I_CmsResourceWrapper}. So it is possible to show resources in 
+the VFS different as usual.<p>
+
+For example: If you would like that xml pages always have the correct file extension (.xml) so you
+can use the {@link org.opencms.file.wrapper.CmsResourceExtensionWrapperXmlPage}. This implementation
+of the interface <code>I_CmsResourceWrapper</code> adds to every resource of type
+"xmlpage" the correct file extension ".xml".<p>
+
+This package is mainly used by {@link org.opencms.repository.CmsRepositorySession} to create a 
+simple configurable access to the resources in OpenCms.<p>
+
+<!-- Put @see and @since tags down here. -->
+
+@since 6.2.4
+
+@see org.opencms.file.wrapper.CmsObjectWrapper
+@see org.opencms.file.wrapper.I_CmsResourceWrapper
+</body>
+</html>

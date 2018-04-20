@@ -1,0 +1,42 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xsd:include schemaLocation="opencms://opencms-xmlcontent.xsd" />  
+    <xsd:include schemaLocation="opencms://system/modules/org.opencms.ade.config/schemas/type.xsd" />
+    <xsd:include schemaLocation="opencms://system/modules/org.opencms.ade.config/schemas/model_page.xsd" />
+    <xsd:include schemaLocation="opencms://system/modules/org.opencms.ade.config/schemas/field.xsd" />
+    <xsd:include schemaLocation="opencms://system/modules/org.opencms.ade.config/schemas/detailpage.xsd" />
+    <xsd:element name="SitemapConfigurations" type="OpenCmsSitemapConfigurations" />
+
+    <xsd:complexType name="OpenCmsSitemapConfigurations">
+        <xsd:sequence>
+            <xsd:element name="SitemapConfiguration" type="OpenCmsSitemapConfiguration" minOccurs="0" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="OpenCmsSitemapConfiguration">
+        <xsd:sequence>
+        	<xsd:element name="DiscardTypes" type="OpenCmsBoolean" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="ResourceType" type="OpenCmsADEType" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="DiscardModelPages" type="OpenCmsBoolean" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="ModelPage" type="OpenCmsADEModelPage" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="DiscardProperties" type="OpenCmsBoolean" minOccurs="0" maxOccurs="1" />
+            <xsd:element name="Property" type="OpenCmsADEField" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="DetailPage" type="OpenCmsDetailPage" minOccurs="0" maxOccurs="unbounded" />
+        </xsd:sequence>
+        <xsd:attribute name="language" type="OpenCmsLocale" use="optional" />
+    </xsd:complexType>
+    <xsd:annotation>
+        <xsd:appinfo>
+			<resourcebundle name="org.opencms.xml.containerpage.messages"/>
+			<tabs>
+				<tab element="ResourceType" name="Resource Types" collapse="false" />
+				<tab element="ModelPage" name="Page Models" collapse="false" />
+				<tab element="Property" name="Property Configuration" collapse="false" />
+				<tab element="DetailPage" name="Detail Pages" collapse="false" />
+			</tabs>
+			 
+        </xsd:appinfo>        
+    </xsd:annotation>
+</xsd:schema>
+
+
+		

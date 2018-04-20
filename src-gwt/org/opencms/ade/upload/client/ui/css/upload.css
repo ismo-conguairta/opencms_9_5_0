@@ -1,0 +1,36 @@
+@external html-face;
+
+.popup {}
+
+.mainContentWidget {
+    background-color: value("constants.css.backgroundColorDialog");
+    border: 1px solid value("constants.css.borderColor");
+    padding: 0 2px;
+    position: relative;
+}
+
+.dragAndDropMessage{
+	width: 80%;
+	margin: 20px auto;
+	text-align: center;
+}
+
+.popupContent div.uploadDialogButton {
+	float: left;
+	margin: 0px;
+}
+
+.dialogInfo {
+	padding-bottom: 2px;
+}
+
+.summary {
+	padding-top: 3px;
+}
+
+
+
+.fileInputPanel {
+	overflow: hidden;
+	position: relative;
+}

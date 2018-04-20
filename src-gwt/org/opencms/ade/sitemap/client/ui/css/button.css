@@ -1,0 +1,108 @@
+/*
+ * This library is part of OpenCms -
+ * the Open Source Content Management System
+ *
+ * Copyright (c) Alkacon Software GmbH (http://www.alkacon.com)
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+ * Lesser General Public License for more details.
+ *
+ * For further information about Alkacon Software, please see the
+ * company website: http://www.alkacon.com
+ *
+ * For further information about OpenCms, please see the
+ * project website: http://www.opencms.org
+ * 
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ */
+
+/**
+ * Styling for tool-bar and hover-bar buttons.<p>
+ * 
+ * @since 8.0.0
+ */
+@external cmsState, cmsState-up, cmsState-up-hovering, cmsState-up-disabled, cmsState-down, cmsState-down-hovering, cmsState-down-disabled;
+
+.dragStarted, .dragPlaceholder{}
+
+div.hoverbar{
+	position: absolute;
+	top: 6px;
+	right: 5px;
+	overflow: visible;
+}
+
+.dragStarted .hoverbar .cmsState{
+	display: none;
+}
+@if user.agent ie6 {
+	.dragStarted .hoverbar .cmsState.hoverbarMove{
+		display: inline;
+	}
+} @else {
+	.dragStarted .hoverbar .cmsState.hoverbarMove{
+		display: inline-block;
+	}	
+}
+@sprite .cmsState-up-hovering .hoverbarContext, .context .hoverbarContext, .cmsState-down .hoverbarContext, .cmsState-down-hovering .hoverbarContext{
+    gwt-image: "icons.menuIconActive";
+}
+@sprite .cmsState-up .hoverbarContext, .cmsState-up-disabled .hoverbarContext, .cmsState-down-disabled .hoverbarContext{
+    gwt-image: "icons.menuIconDeactivated";
+}
+
+
+
+@sprite .cmsState-up-hovering .hoverbarParent, .cmsState-down-hovering .hoverbarParent, .cmsState-down .hoverbarParent, .context .hoverbarParent{
+    gwt-image: "icons.gotoParentIcon";
+}
+@sprite .cmsState-up .hoverbarParent, .cmsState-up-disabled .hoverbarParent, .cmsState-down-disabled .hoverbarParent{
+    gwt-image: "icons.gotoParentIcon";
+}
+
+@sprite .cmsState-up-hovering .hoverbarGotoSub, .cmsState-down-hovering .hoverbarGotoSub, .cmsState-down .hoverbarGotoSub, .context .hoverbarGotoSub {
+    gwt-image: "icons.subSitemapIcon";
+}
+@sprite .cmsState-up .hoverbarGotoSub, .cmsState-up-disabled .hoverbarGotoSub, .cmsState-down-disabled .hoverbarGotoSub {
+    gwt-image: "icons.subSitemapIconDeactivated";
+}
+
+@sprite .cmsState-up-hovering .hoverbarGoto, .cmsState-down-hovering .hoverbarGoto, .cmsState-down .hoverbarGoto, .context .hoverbarGoto{
+    gwt-image: "icons.gotoPageIcon";
+}
+@sprite .cmsState-up .hoverbarGoto, .cmsState-up-disabled .hoverbarGoto, .cmsState-down-disabled .hoverbarGoto{
+    gwt-image: "icons.gotoPageIcon";
+}
+
+@sprite .cmsState-up-hovering .hoverbarMove, .cmsState-down-hovering .hoverbarMove, .cmsState-down .hoverbarMove{
+    gwt-image: "icons.moveIconActive";
+}
+@sprite .cmsState-up .hoverbarMove, .cmsState-up-disabled .hoverbarMove, .cmsState-down-disabled .hoverbarMove{
+    gwt-image: "icons.moveIconDeactivated";
+}
+
+
+@sprite .cmsState-up-disabled .showPage, .cmsState-down-disabled .showPage, .cmsState-up .showPage{
+	gwt-image: "icons.showPageIcon";
+}
+
+@sprite .cmsState-up-hovering .showPage, .cmsState-down-hovering .showPage, .cmsState-down .showPage{
+    gwt-image: "icons.showPageIcon";
+}
+
+@sprite .cmsState-up-disabled .undelete, .cmsState-down-disabled .undelete, .cmsState-up .undelete{
+	gwt-image: "icons.replaceIcon";
+}
+
+@sprite .cmsState-up-hovering .undelete, .cmsState-down-hovering .undelete, .cmsState-down .undelete{
+    gwt-image: "icons.replaceIcon";
+}

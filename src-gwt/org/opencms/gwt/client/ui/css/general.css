@@ -1,0 +1,217 @@
+@external multiLineLabel; 
+
+.truncatingLabel{
+	overflow: hidden;
+	white-space: nowrap;
+	cursor: default;
+	text-overflow: ellipsis;
+}
+
+@if user.agent ie6 {
+	.inlineBlock {
+		display: inline;
+	}
+} @else {
+	.inlineBlock {
+		display: inline-block;
+	}
+}
+
+.truncatingLabel.multiLineLabel{
+	white-space: normal;
+}
+
+.toolTip *{
+	margin: 0;
+	padding: 0;
+	border: none;
+	color: value("constants.css.textColor");
+	font-family: value("constants.css.fontFamily");
+	font-size: value("constants.css.fontSize");
+	line-height: value("constants.css.lineHeight");
+	background: transparent;
+	text-align: left;
+	height: auto;
+	width: auto;
+	min-height: 0;
+	max-height: none;
+	min-width: 0;
+	max-width: none;
+}
+div.toolTip.cornerAll, div.toolTip {
+	position: absolute;
+	z-index: value("constants.css.zIndexDND");
+	border: 1px solid value("constants.css.borderColor");
+	background: value("constants.css.backgroundColorMenu");
+	padding: 4px;
+	font-family: value("constants.css.fontFamily");
+	font-size: value("constants.css.fontSizeSmall");
+	color: value("constants.css.textColor");
+}
+
+.toolTip {
+	opacity: 0.85;
+}
+
+.toolTip p{
+	white-space: nowrap;
+	margin: 0px;
+	padding: 0px;
+}
+
+div.header{
+	border: 2px solid value("constants.css.borderColor");
+	background: value("constants.css.backgroundColorDialog");
+	width: value("constants.css.toolbarWidth");
+	padding: 10px 0px;
+	margin: 0px auto 10px;
+	position: relative;
+}
+
+/** joined vendor prefix style, for better fall back behavior */
+div.header{
+	background-image: literal("-moz-linear-gradient(")value("constants.css.gradientFormDialog") literal(")");
+	background-image: literal("-ms-linear-gradient(")value("constants.css.gradientFormDialog") literal(")");
+	background-image: literal("-webkit-linear-gradient(")value("constants.css.gradientFormDialog") literal(")");
+	background-image: literal("-o-linear-gradient(")value("constants.css.gradientFormDialog") literal(")");
+	background-image: literal("linear-gradient(")value("constants.css.gradientFormDialog") literal(")");
+}
+
+div.header h2{
+	font-size: value("constants.css.fontSizeBig");
+	font-weight: bold;
+	margin: 0px;
+	vertical-align: middle;
+}
+
+div.header > div{
+	float:left;
+	font-size: value("constants.css.fontSize");
+	margin: 0px 0px 0px 10px;
+	vertical-align: middle;
+}
+div.header p{
+	font-size: value("constants.css.fontSize");
+	margin: 8px 0px;
+}
+
+div.header div.headerButtons{
+	position: absolute;
+	top: 10px;
+	right: 20px;
+}
+
+div.header div.headerButtons > div{
+	float: right;
+}
+
+.textSmall, div.textSmall{
+	font-family: value("constants.css.fontFamily");
+	font-size: value("constants.css.fontSizeSmall");
+	line-height: value("constants.css.lineHeightSmall");
+}
+.textMedium, div.textMedium{
+	font-family: value("constants.css.fontFamily");
+	font-size: value("constants.css.fontSize");
+	line-height: value("constants.css.lineHeight");
+}
+.textBig, div.textBig{
+	font-family: value("constants.css.fontFamily");
+	font-size: value("constants.css.fontSizeBig");
+	line-height: value("constants.css.lineHeightBig");
+}
+
+.border {
+	border: 1px solid value("constants.css.borderColor");
+}
+
+.cellpadding {
+	padding: 2px 0px;
+}
+
+.clearAll{
+	height: 0px;
+	clear: both;
+	margin: 0px;
+	border: none;
+}
+
+/** Following is a clear-fix for containers with floated content, forcing the container to enclose its content.
+    @see http://www.positioniseverything.net/easyclearing.html */
+.clearFix:after {
+    content: ".";
+    display: block;
+    height: 0 !important;
+    min-height: 0 !important;
+    clear: both;
+    visibility: hidden;
+    overflow: hidden !important;
+}
+
+@sprite div.disablingOverlay{
+	gwt-image: 'gwtImages.placeholderImage';
+	display: block;
+	position:absolute;
+	z-index: value("constants.css.zIndexInline");
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	visibility: visible;
+}
+
+.hideOverlay div.disablingOverlay{
+	background: transparent;
+}
+.cornerAll{
+	border-radius: value("constants.css.borderRadius");
+}
+.buttonCornerAll{
+	border-radius: value("constants.css.borderRadiusButton");
+}
+.cornerBottom{
+	border-bottom-left-radius: value("constants.css.borderRadius");
+	border-bottom-right-radius: value("constants.css.borderRadius");
+}
+.cornerTop{
+	border-top-left-radius: value("constants.css.borderRadius");
+	border-top-right-radius: value("constants.css.borderRadius");
+}
+.shadow{
+	box-shadow: 2px 2px 6px value("constants.css.boxShadowColorOther");
+}
+
+.clearStyles, .clearStyles *{
+	margin: 0;
+	padding: 0;
+	border: none;
+	color: value("constants.css.textColor");
+	font-family: value("constants.css.fontFamily");
+	font-size: value("constants.css.fontSize");
+	line-height: value("constants.css.lineHeight");
+	background: transparent;
+	text-align: left;
+	height: auto;
+	width: auto;
+	min-height: 0;
+	max-height: none;
+	min-width: 0;
+	max-width: none;
+}
+
+div.simpleFormRow{
+	height: 25px;
+	overflow: hidden;
+}
+div.simpleFormLabel{
+	vertical-align: middle;
+	width: 25%;
+	float: left;
+	padding-top: 5px;
+}
+div.simpleFormInputBox{
+	vertical-align: middle;
+	width: 70%;
+	float: right;
+}
+

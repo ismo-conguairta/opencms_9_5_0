@@ -1,0 +1,290 @@
+<!-- 
+# The root configuration node is called <opencms> for all OpenCms configurations.
+-->
+<!ELEMENT opencms (search)>
+
+<!--
+# In this node the global search options are configured.
+-->
+<!ELEMENT search (
+	solr?,
+	cache?,
+	directory,
+	timeout,
+	offlineUpdateFrequency?,
+	forceunlock?,
+	excerpt,
+	extractionCacheMaxAge?,
+	maxModificationsBeforeCommit?,
+	highlighter,
+	documenttypes,
+	analyzers,
+	indexes,
+	indexsources,
+	fieldconfigurations?
+)>
+<!ATTLIST search
+	class CDATA #IMPLIED
+>
+
+<!--
+# Configuration node for the Solr Server
+-->
+<!ELEMENT solr (
+	home?,
+	configfile?,
+	commitWithinMs?
+)>
+<!ATTLIST solr
+	enabled (true|false|TRUE|FALSE) #REQUIRED
+	serverUrl CDATA #IMPLIED
+>
+<!ELEMENT home (#PCDATA)>
+<!ELEMENT configfile (#PCDATA)>
+<!ELEMENT commitWithinMs (#PCDATA)>
+
+<!--
+# the size of the search result LFU map.
+-->
+<!ELEMENT cache (#PCDATA)>
+
+<!--
+# The directory below WEB-INF/ where Lucene index files are stored.
+-->
+<!ELEMENT directory (#PCDATA)>
+
+<!--
+# Timeout in milliseconds to abandon indexing threads.
+-->
+<!ELEMENT timeout (#PCDATA)>
+
+<!--
+# Time in milliseconds to update offline indexes.
+-->
+<!ELEMENT offlineUpdateFrequency (#PCDATA)>
+
+<!--
+# The state of unlocking during the indexing threads (always|never|onlyfull), 
+# default is onlyfull.
+-->
+<!ELEMENT forceunlock (#PCDATA)>
+
+<!--
+# The max. char. length of the excerpt in the search results.
+-->
+<!ELEMENT excerpt (#PCDATA)>
+
+<!--
+# The max. age text extraction results should be kept in the extraction cache.
+-->
+<!ELEMENT extractionCacheMaxAge (#PCDATA)>
+
+<!--
+# The maximum number of modifications before a commit in the search index is triggered.
+-->
+<!ELEMENT maxModificationsBeforeCommit (#PCDATA)>
+
+<!--
+# A class implementing org.opencms.search.documents.I_TermHighlighter
+# to highlight the search terms in the excerpt.
+-->
+<!ELEMENT highlighter (#PCDATA)>
+
+<!ELEMENT documenttypes (documenttype*)>
+
+<!--
+# Document types specify which factory class is used to pull the
+# content of an OpenCms document into a Lucene index document. The factory class 
+# gets triggered for OpenCms documents matching the configured resource type 
+# and/or mimetype combination in a document factory node.
+-->
+<!ELEMENT documenttype (
+	name,
+	class,
+	mimetypes,
+	resourcetypes
+)>
+
+<!--
+# Class/package names of the OpenCms document's resource types.
+-->
+<!ELEMENT resourcetypes (resourcetype+)>
+<!ELEMENT resourcetype (#PCDATA)>
+
+<!--
+# Name of the OpenCms document's mimetype.
+-->
+<!ELEMENT mimetypes (mimetype*)>
+<!ELEMENT mimetype (#PCDATA)>
+
+<!ELEMENT analyzers (analyzer+)>
+
+<!--
+# Analyzers specify a class to reduce the content to be indexed
+# with trimmed endings etc.
+-->
+<!ELEMENT analyzer (
+	class,
+	stemmer*,
+	locale
+)>
+
+<!--
+# Specifies the name of the stemmer algorithm of the Lucene snowball analyzer.
+-->
+<!ELEMENT stemmer (#PCDATA)>
+
+<!ELEMENT indexes (index*)>
+
+<!--
+# Configuration of a search index definition.
+-->
+<!ELEMENT index (
+	name,
+	rebuild,
+	project,
+	locale,
+	configuration?,
+	sources,
+	param*
+)>
+<!ATTLIST index class CDATA #IMPLIED>
+
+<!--
+# Rebuild mode of the search index.
+-->
+<!ELEMENT rebuild (#PCDATA)>
+
+<!--
+# The project used to index content.
+-->
+<!ELEMENT project (#PCDATA)>
+
+<!--
+# A list of index content sources in OpenCms of the search index.
+-->
+<!ELEMENT sources (source*)>
+<!ELEMENT source (#PCDATA)>
+
+<!--
+# The field configuration used in building the index.
+-->
+<!ELEMENT configuration (#PCDATA)>
+
+<!--
+# The same index sources as "sources" above but linked from global search configuration 
+# (CmsSearchManager) instead from a "index" element. 
+-->
+<!ELEMENT indexsources (indexsource*)>
+
+<!--
+# Configuration of an search index content source in OpenCms
+-->
+<!ELEMENT indexsource (
+	name,
+	indexer,
+	resources,
+	documenttypes-indexed
+)>
+
+<!--
+# Optional parameter list of the search index source.
+-->
+<!ELEMENT indexer (param*)>
+
+<!--
+# The indexer class to index the content of this index source.
+-->
+<!ATTLIST indexer class CDATA #REQUIRED>
+
+<!--
+# A list of resources to be indexed.
+-->
+<!ELEMENT resources (resource*)>
+<!ELEMENT resource (#PCDATA)>
+
+<!--
+# A list of documenttypes to be indexed wihthin this index source.
+-->
+<!ELEMENT documenttypes-indexed (name*)>
+
+<!--
+# An optional parameter of the index source.
+-->
+<!ELEMENT param (#PCDATA)>
+<!ATTLIST param name CDATA #REQUIRED>
+
+<!--
+# The search field configuration list.
+#
+# Since OpenCms 7 it is possible to generate Lucene indexes with an individual search field configuration.
+# This allows more fine-grained searches especially with xmlcontent or xmlpage resources.
+-->
+<!ELEMENT fieldconfigurations (fieldconfiguration*)>
+
+<!--
+# A field configuration, this can be used with many indexes by referencing the name.
+-->
+<!ELEMENT fieldconfiguration (
+	name,
+	description?,
+	fields?
+)>
+<!ATTLIST fieldconfiguration
+	class CDATA #IMPLIED
+>
+
+<!--
+# A field configuration is made up as a list of fields.
+-->
+<!ELEMENT fields (field*) >
+
+<!--
+# A field is made up as a list of mappings, plus the attributes that describe how to create the field.
+-->
+<!ELEMENT field (mapping+) >
+<!ATTLIST field 
+	name CDATA #REQUIRED
+	display CDATA #IMPLIED
+	store (true|false|TRUE|FALSE|yes|no|YES|NO|compress|COMPRESS) #REQUIRED
+	index (true|false|TRUE|FALSE|no|NO|tokenized|untokenized) #REQUIRED
+	excerpt (true|false|TRUE|FALSE) #IMPLIED
+	analyzer CDATA #IMPLIED
+	boost CDATA #IMPLIED
+	default CDATA #IMPLIED
+	type CDATA #IMPLIED
+>
+
+<!--
+# Finally, the description of an individual mapping from a VFS resource piece of content to the current field.
+-->
+<!ELEMENT mapping (#PCDATA) >
+<!ATTLIST mapping 
+	type (content|property|property-search|item|dynamic|attribute) #REQUIRED
+	default CDATA #IMPLIED
+	class CDATA #IMPLIED
+>
+
+<!--
+# Defionitions used by several elements:
+-->
+
+<!--
+# Element for the name of a language.
+-->
+<!ELEMENT locale (#PCDATA)>
+
+<!--
+# Element for a locigal name.
+-->
+<!ELEMENT name (#PCDATA)>
+
+<!--
+# Element for a locigal description.
+-->
+<!ELEMENT description (#PCDATA)>
+
+<!--
+# Element for a package/class name of a Java class.
+-->
+<!ELEMENT class (#PCDATA)>

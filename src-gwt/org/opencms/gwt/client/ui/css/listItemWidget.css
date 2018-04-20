@@ -1,0 +1,252 @@
+@external cms_type_icon;
+.itemContainer .itemAdditional{
+	display: none;
+}
+
+.itemContainer.open .itemAdditional{
+	display: block;
+}
+
+div.itemContainer{
+	border: 1px solid value("constants.css.borderColor");
+	background: value("constants.css.backgroundColorDialog");
+	line-height: 16px;
+	color: value("constants.css.textColor");
+}
+
+li div.itemContainer{
+	border: 1px solid value("constants.css.borderColorListItem");
+}
+
+li div.itemContainer.cmsHovering{
+	border: 1px solid value("constants.css.borderColor");
+}
+
+.itemContainer div {
+	font-family: value("constants.css.fontFamily");
+	font-size: value("constants.css.fontSize");
+	line-height: 16px;
+}
+@url editCursorGifUrl coreImages.editCursorGif;
+@url editCursorIcoUrl coreImages.editCursorIco;
+
+.inlineEditable, .inlineEditable:hover, .inlineEditable:focus{
+	cursor: editCursorIcoUrl, editCursorGifUrl, crosshair;
+}
+.itemContainer .titleInput{
+	font-weight: bold;
+	font-family: value("constants.css.fontFamily");
+	font-size: value("constants.css.fontSize");
+	display: inline-block; 
+}
+
+@external navMode;
+
+@sprite .itemIcon .export, .navMode .itemIcon .export {
+	gwt-image: "gwtImages.bigIcons.stateExportBigIcon"; 
+}
+@sprite .itemIcon .hidden, .navMode .itemIcon .hidden {
+	gwt-image: "gwtImages.bigIcons.stateHiddenBigIcon"; 
+}
+@sprite .itemIcon .normal, .navMode .itemIcon .normal {
+	gwt-image: "gwtImages.bigIcons.stateNormalBigIcon";
+}
+@sprite .itemIcon .secure, .navMode .itemIcon .secure {
+	gwt-image: "gwtImages.bigIcons.stateSecureBigIcon";
+}
+@sprite .itemIcon .redirect, .navMode .itemIcon .redirect { 
+	gwt-image: "gwtImages.bigIcons.stateRedirectBigIcon";
+}
+
+.stateIcon{
+	left: 0px;
+    position: absolute;
+    top: 16px;
+    z-index: value("constants.css.zIndexInline");
+}
+
+@sprite .stateIcon.export{
+	gwt-image: "gwtImages.icons.stateExportIcon";
+}
+
+@sprite .stateIcon.secure{
+	gwt-image: "gwtImages.icons.stateSecureIcon";
+}
+
+.lockIcon{
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    z-index: value("constants.css.zIndexInline");
+}
+
+.topRightIcon {
+	position: absolute;
+	left: 16px;
+	top: 0ßx;
+	z-index: value("constants.css.zIndexInline");
+}
+
+
+@sprite .lockClosed, .lockSharedClosed{
+	gwt-image: "gwtImages.lockOtherImage";
+}
+
+@sprite .lockOpen{
+	gwt-image: "gwtImages.lockUserImage";
+}
+
+@sprite .copyModel {
+	gwt-image: "gwtImages.addImage"; 
+}
+
+@sprite .lockSharedOpen{
+	gwt-image: "gwtImages.lockSharedImage";
+}
+
+@sprite .changed { 
+	gwt-image: "gwtImages.changedIcon";
+}
+
+
+
+@sprite div.itemContent {
+    gwt-image: "backgrounds.stateBackground";
+    background-position: 50% 50%;
+    height: auto;
+	position: relative;
+	background-color: value("constants.css.backgroundColorListItem");
+	white-space: nowrap;
+}
+
+.itemActive div.itemContent {
+    background-color: value("constants.css.backgroundColorStateHover");
+}
+
+.disabledItem div.itemContent {
+	background-color: value("constants.css.backgroundColorStateDisabled");
+}
+
+.itemBlue div.itemContent {
+    background-color: value("constants.css.backgroundColorStateNew");
+}
+
+.itemRed div.itemContent {
+    background-color: value("constants.css.backgroundColorStateChanged");
+}
+
+.itemYellow div.itemContent {
+    background-color: value("constants.css.backgroundColorStateSubSitemap");
+}
+
+div.itemIcon{
+	height: 24px;
+	width: 24px;
+	float: left;
+	overflow: hidden;
+	margin: 7px 4px;
+}
+
+.itemIcon .cms_type_icon{
+	height: 24px;
+	width: 24px;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+}
+
+.itemTitle{
+	font-weight: bold;
+    vertical-align: middle;
+    white-space: nowrap;
+    display: inline;
+}
+.titleRow{}
+@if user.agent ie6 {
+	div.titleRow{
+		margin-top: 3px;
+		margin-bottom: 3px;
+	}
+}
+.cmsHovering .buttonPanel{
+	display: block;
+}
+
+.buttonPanel{
+	position: absolute;
+	right: 5px;
+	top: 9px;
+	overflow: visible;
+}
+
+.buttonPanel > * {
+	visibility: hidden;
+}
+
+.buttonPanel > .permaVisible, .cmsHovering .buttonPanel > * {
+	visibility: visible;
+}
+
+div.buttonPanel > * {
+	float: right;
+	margin-left: 2px;
+}
+
+div.itemAdditional{
+	padding: 5px 0px 0px 4px;
+}
+
+div.itemAdditionalTitle{
+	float:left;
+	height:16px;
+	margin-right:5px;
+	overflow:hidden;
+	vertical-align:top;
+	width:90px;
+}
+
+div.itemAdditionalValue{
+	margin-left:95px;
+	vertical-align:top;
+	height:16px;
+}
+
+li.expired div.itemContent{
+	background-image:  repeating-linear-gradient(45deg, transparent, transparent 15px, rgba(252,255,255,.5) 15px, rgba(255,255,255,.5) 30px);
+	background-position: 50% 50%;
+	height: auto;
+}
+
+/** These styles are for dragging. */
+li.dragging, div.dragging{
+	list-style-type: none !important;
+	position: absolute !important;
+	margin: 0px !important;
+	z-index: value("constants.css.zIndexDND") !important;
+}
+.dragging .itemContainer {
+		box-shadow: 2px 2px 6px value("constants.css.boxShadowColorOther");
+} 
+
+/** following classes have to be implemented but are not used within this CSS **/
+.cmsState{}
+.cmsState-up{}
+.cmsState-up-hovering{}
+.cmsState-up-disabled{}
+.cmsState-down{}
+.cmsState-down-hovering{}
+.cmsState-down-disabled{}
+
+.unselectable  * {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+
+.itemContainer .titleDeleted { 
+	text-decoration: line-through; 
+}

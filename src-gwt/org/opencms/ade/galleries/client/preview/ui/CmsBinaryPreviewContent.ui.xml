@@ -1,0 +1,29 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:cms="urn:import:org.opencms.gwt.client.ui">
+	<ui:with field="resources" type="org.opencms.gwt.client.ui.css.I_CmsLayoutBundle" />
+	<ui:style>
+		div.panel{
+			height: 100%;
+			overflow: hidden;
+			position: relative;
+		}
+		div.panel > ul {
+			margin:2px;
+		}
+		div.panel div.previewContent{
+			top: 52px;
+			left: 2px;
+			bottom: 2px;
+			right: 2px;
+			position: absolute;
+			overflow: auto;
+		}
+		
+	</ui:style>
+	<g:HTMLPanel styleName="{style.panel}">
+		<cms:CmsList ui:field="m_list" />
+		<g:HTML ui:field="m_previewContent" styleName="{style.previewContent}" />
+	</g:HTMLPanel>
+</ui:UiBinder> 

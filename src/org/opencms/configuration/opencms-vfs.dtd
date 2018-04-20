@@ -1,0 +1,187 @@
+<!-- 
+# The root configuration node is called <opencms> for all OpenCms configurations.
+-->
+<!ELEMENT opencms (vfs)>
+
+<!--
+# <vfs> configuration:
+#
+# The configuration of the 'virtual file system' is done here.
+-->
+
+<!ELEMENT vfs (
+	resources,
+	defaultfiles,
+	translations?, 
+	
+	xmlcontent?)>
+
+<!ELEMENT resources (
+	resourceloaders, 
+	resourcetypes,
+	collectors?,
+	namegenerator?,
+	mimetypes?,
+	relationtypes?,
+	html-converters?)>
+
+<!ELEMENT resourceloaders (loader+)>
+<!ELEMENT loader (param*)>
+<!ATTLIST loader class CDATA #REQUIRED>
+
+<!ELEMENT param (#PCDATA)>
+<!ATTLIST param name CDATA #REQUIRED>
+
+<!--
+# Relation types configuration.
+#
+# This node defines new relation types that could be used by the API 
+# to complement the internal system defined relation types.
+#
+# A relation type has a name which should only contain (uppercase) letters, numbers and underscores.
+# (if you want to localize the name you can define a GUI_RELATIONTYPE_ localization key)
+# and a type which may be weak or strong, strong related resources will be published together.
+-->
+<!ELEMENT relationtypes (relationtype*)>
+<!ELEMENT relationtype EMPTY>
+<!ATTLIST relationtype name CDATA #REQUIRED type CDATA #REQUIRED>
+
+<!--
+# Collectors for gathering Lists of resources from the VFS.	
+-->
+<!ELEMENT collectors (collector+)>
+<!ELEMENT collector EMPTY>
+<!ATTLIST collector class CDATA #REQUIRED order CDATA #REQUIRED>
+
+
+<!-- 
+  URL name generator class for XML contents. 
+-->
+<!ELEMENT namegenerator EMPTY>
+<!ATTLIST namegenerator class CDATA #REQUIRED>
+
+<!--
+# MIME type configuration.
+#
+# This is a simple list of "extension" and "type" attributes.
+-->
+<!ELEMENT mimetypes (mimetype*)>
+<!ELEMENT mimetype EMPTY>
+<!ATTLIST mimetype extension CDATA #REQUIRED type CDATA #REQUIRED>
+
+<!--
+# HTML converters manipulate the content of pages containing HTML values.
+# The behavior of the HTML converters is configured by using the "content-conversion"
+# property value. The name(s) entered here are passed to the matching HTML converter. 
+# There can be entered more than one option in the property, e.g. "cleanup;xhtml",
+# the ";" acts as separator.
+-->
+<!ELEMENT html-converters (html-converter*)>
+<!ELEMENT html-converter EMPTY>
+<!ATTLIST html-converter name CDATA #REQUIRED class CDATA #REQUIRED>
+
+<!--
+# Default file names for directories.
+#
+# These are the default files that are read when a folder name 
+# is requested by the user in a http request.
+-->
+<!ELEMENT defaultfiles (defaultfile+)>
+<!ELEMENT defaultfile EMPTY>
+<!ATTLIST defaultfile name CDATA #REQUIRED>
+
+<!--
+# Translations for file and folder names.
+-->
+<!ELEMENT translations (filetranslations?, foldertranslations?, xsdtranslations?)>
+<!ELEMENT translation (#PCDATA)>
+
+<!--
+# Filename translation is used when creating new files to automatically 
+# replace chars not allowed in the OpenCms VFS into allowed ones.
+# This is done using Perl5 regular search & replace expression translation rules.
+# One of the most important uses is e.g. replacement of space with "_".
+# So if a user uploads a file "my file.txt" the name will be translated to "my_file.txt".
+# All of the translation rules are applied to the filename in the given order.
+#
+# By setting the "enabled" attibute to "false" you can disable filename translation.
+# It is enabled by default. It's recommended to leave this enabled.
+#
+# Filename translation is only applied to: 
+#   - File uploads (the name of the uploaded file is translated)
+#   - Zip-File uploads (all filenames in the Zip are translated)
+-->
+
+<!ELEMENT filetranslations (translation*)>
+<!ATTLIST filetranslations enabled (TRUE|true|FALSE|false) #REQUIRED>
+
+<!--
+# Folder translation can be used to maintain compatibility with older
+# OpenCms installations, e.g. with version before the 5.0 (beta 2) release.
+# This is done using Perl5 regular search & replace expression rules.
+# All read and write access to a OpenCms VFS folder that matches one of given
+# translation rules is automatically translated to the new name.
+# Translation is stopped after the first match was found.
+#
+# The attribute "enabled" controls if folder translation is enabled.
+# The default is "not enabled". Use this feature only if you have specific 
+# reasons because it might hurt performance.
+-->
+
+<!ELEMENT foldertranslations (translation*)>
+<!ATTLIST foldertranslations enabled (TRUE|true|FALSE|false) #REQUIRED>
+
+<!--
+# XSD (XML schema) translation can be used to find XSD files that have been 
+# moved from their original location. Since the XSD path is stored in the XML,
+# and the CRE can not be used here, existing XML files that point to a moved
+# XSD would not be able to find the schema. Using the translation, the schema
+# can still be found without updating all the affected XML files.
+# This is done using Perl5 regular search & replace expression rules.
+# All read and write access to a OpenCms XSD schema that matches one of given
+# translation rules is automatically translated to the new name.
+# Translation is stopped after the first match was found.
+#
+# The attribute "enabled" controls if folder translation is enabled.
+# The default is "not enabled".
+-->
+
+<!ELEMENT xsdtranslations (translation*)>
+<!ATTLIST xsdtranslations enabled (TRUE|true|FALSE|false) #REQUIRED>
+
+<!--
+# XML content definitions that are used to build XML content items.
+#
+# The configured widget classes must implement the interface 
+# "org.openmcms.workplace.xmlwidgets.I_CmsXmlWidget".
+#
+# Each XML content schema type configuration requires a class that implements
+# the interface "org.opencms.xml.types.I_CmsXmlSchemaType". This type defines 
+# the basic behaviour of the XML content item data. For creating the 
+# XML content editor, a default widget class must be given that implements the 
+# interface "org.opencms.workplace.xmltypes.I_CmsXmlWidget". 
+# The configured widget class must also be listed in the "widgets" node.
+# For a widget, an optional alias name can be configured as well as a default
+# widget configuration that is used to define the widget behavior in the structured
+# content editor if no individual configuration is defined in the XSD for the XML content.
+-->
+<!ELEMENT xmlcontent (widgets, schematypes)>
+
+<!ELEMENT widgets (widget*)>
+<!ELEMENT widget EMPTY>
+<!ATTLIST widget class CDATA #REQUIRED alias CDATA #IMPLIED configuration CDATA #IMPLIED>
+
+<!ELEMENT schematypes (schematype*)>
+<!ELEMENT schematype EMPTY>
+<!ATTLIST schematype class CDATA #REQUIRED defaultwidget CDATA #REQUIRED>
+
+<!--
+# Name for the property node (see below), this node already exists in opencms-modules.xml
+-->
+<!ELEMENT name (#PCDATA)>
+
+<!--
+# Include the resource types DTD.
+-->
+<!ENTITY % opencms-resourcetypes SYSTEM "http://www.opencms.org/dtd/6.0/opencms-resourcetypes.dtd"> 
+%opencms-resourcetypes;

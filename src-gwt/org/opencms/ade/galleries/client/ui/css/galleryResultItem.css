@@ -1,0 +1,92 @@
+@external cms_type_icon;
+
+@def smallImageWidth 96;
+@def smallImageHeight 72;
+@def bigImageWidth 200;
+@def bigImageHeight 150;
+
+/** unused classes **/
+.itemAdditional, .inlineEditable, .open, .itemActive, .itemRed, .itemBlue, .itemYellow, .disabledItem, .itemTitle, .cms_type_icon, .expired,
+.itemAdditionalTitle, .itemAdditionalValue, .dragging,
+.cmsState, .cmsState-up, .cmsState-up-hovering, .cmsState-up-disabled, .cmsState-down, .cmsState-down-hovering,
+.cmsState-down-disabled, .export, .hidden, .secure, .redirect, .normal, .lockSharedOpen, .lockSharedClosed, .stateIcon, .lockOpen, .lockClosed, .titleInput, .copyModel {}
+
+
+
+.tilingItem .imageTile, .tilingList .tilingItem .titleRow, .tilingList .tilingItem .itemIcon, .tilingList .tilingItem .itemAdditional{
+	display: none;
+}
+@if user.agent ie6 {
+	.tilingList .tilingItem, .tilingList .tilingItem div, .tilingList .imageTile, .tilingList .tilingItem .itemContainer, .tilingList .tilingItem .itemContent{
+		display: inline;
+	}
+} @else {
+	.tilingList .tilingItem, .tilingList .tilingItem div, .tilingList .imageTile, .tilingList .tilingItem .itemContainer, .tilingList .tilingItem .itemContent{
+		display: inline-block;
+	}
+}
+
+.tilingList .tilingItem .itemContainer{
+	padding: 2px;
+	line-height: 1px;
+}
+
+@sprite .tilingList div.imageTile{
+	gwt-image: "coreImages.brokenImage";
+	background-position: center;
+	display: block;
+	width: value("galleryResultItemCss.bigImageWidth","px");
+	height: value("galleryResultItemCss.bigImageHeight","px");
+}
+.tilingList div.imageTile img.bigImage {
+	display: block;
+	width: value("galleryResultItemCss.bigImageWidth","px");
+	height: value("galleryResultItemCss.bigImageHeight","px");
+}
+
+.tilingList.smallThumbnails div.imageTile img.bigImage, .tilingList div.imageTile img.smallImage{
+	display: none;
+}
+
+.tilingList.smallThumbnails div.imageTile, .tilingList.smallThumbnails div.imageTile img.smallImage {
+	display: block;
+	width: value("galleryResultItemCss.smallImageWidth","px");
+	height: value("galleryResultItemCss.smallImageHeight","px");
+}
+
+.tilingList .tilingItem{
+	margin: 1px;
+}
+
+.tilingList .tilingItem .lockIcon{
+	bottom: 1px;
+	right: 1px;
+	top:auto;
+	left: auto;
+}
+
+.tilingList .tilingItem .cmsHovering .buttonPanel, .tilingList .tilingItem .buttonPanel.permaVisible{
+	height: auto;
+	border: 1px solid value("constants.css.borderColor");
+	background: value("constants.css.backgroundColorDialog");
+	border-radius:2px;
+	display:block;
+	top: 0px;
+	right: 0px;
+}
+
+.buttonPanel.permaVisible > *{
+	visibility: visible;
+}
+
+.unselectable {} 
+
+.changed{}
+
+.tilingList .topRightIcon {
+	left: 0px !important; 
+}
+
+.topRightIcon {} 
+
+.titleDeleted {}

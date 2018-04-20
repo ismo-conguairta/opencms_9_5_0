@@ -1,0 +1,248 @@
+@external html-face, cmsState, cmsState-up, cmsState-up-hovering, cmsState-up-disabled, cmsState-down, cmsState-down-hovering, cmsState-down-disabled, resizeButton-up-hovering;
+
+.cmsState, .cmsHovering {}
+.cmsState.cmsState-down-disabled, .cmsState.cmsState-up-disabled { cursor:auto; }
+
+/** General styling for the html-face class and it's inner span, if an image is present. */
+div.html-face {
+	color:inherit;
+	font-family:value("constants.css.fontFamily");
+	line-height: value("constants.css.lineHeight");
+	font-weight:inherit;
+	text-align:center;
+	white-space:nowrap;
+}
+div.cmsMinWidth div.html-face {
+	min-width:5em;
+}
+div.html-face span {
+	display:inline-block;
+    vertical-align:middle;
+}
+div.html-face span.spacerRight {
+	margin-right:4px;
+}
+div.html-face span.spacerLeft {
+	margin-left:4px;
+}
+
+/** Button styles for resize.*/
+div.resizeButton{
+	border: none;
+    padding: 0;
+    position: absolute;
+    width: 12px;
+    bottom: 0;
+    height: 12px;
+    right: 0;
+    cursor: s-resize;
+    outline: none;
+    
+}
+@def RESIZE_BUTTON literal("135deg, rgba(119,136,170,0) 0%, rgba(119,136,170,0) 48%, rgba(119,136,170,1) 54%, rgba(119,136,170,0) 60%, rgba(119,136,170,0) 67%, rgba(119,136,170,1) 73%, rgba(119,136,170,0) 79%, rgba(119,136,170,0) 85%, rgba(119,136,170,1) 90%, rgba(119,136,170,0) 92%, rgba(119,136,170,0) 100%");
+div.resizeButton{
+	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjNzc4OGFhIiBzdG9wLW9wYWNpdHk9IjAiLz4KICAgIDxzdG9wIG9mZnNldD0iNDglIiBzdG9wLWNvbG9yPSIjNzc4OGFhIiBzdG9wLW9wYWNpdHk9IjAiLz4KICAgIDxzdG9wIG9mZnNldD0iNTQlIiBzdG9wLWNvbG9yPSIjNzc4OGFhIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNjAlIiBzdG9wLWNvbG9yPSIjNzc4OGFhIiBzdG9wLW9wYWNpdHk9IjAiLz4KICAgIDxzdG9wIG9mZnNldD0iNjclIiBzdG9wLWNvbG9yPSIjNzc4OGFhIiBzdG9wLW9wYWNpdHk9IjAiLz4KICAgIDxzdG9wIG9mZnNldD0iNzMlIiBzdG9wLWNvbG9yPSIjNzc4OGFhIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iNzklIiBzdG9wLWNvbG9yPSIjNzc4OGFhIiBzdG9wLW9wYWNpdHk9IjAiLz4KICAgIDxzdG9wIG9mZnNldD0iODUlIiBzdG9wLWNvbG9yPSIjNzc4OGFhIiBzdG9wLW9wYWNpdHk9IjAiLz4KICAgIDxzdG9wIG9mZnNldD0iOTAlIiBzdG9wLWNvbG9yPSIjNzc4OGFhIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iOTUlIiBzdG9wLWNvbG9yPSIjNzc4OGFhIiBzdG9wLW9wYWNpdHk9IjAiLz4KICAgIDxzdG9wIG9mZnNldD0iOTclIiBzdG9wLWNvbG9yPSIjNzc4OGFhIiBzdG9wLW9wYWNpdHk9IjAiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+	background-image: literal("-moz-linear-gradient(")RESIZE_BUTTON literal(")");
+	background-image: literal("-ms-linear-gradient(")RESIZE_BUTTON literal(")");
+	background-image: literal("-webkit-linear-gradient(")RESIZE_BUTTON literal(")");
+	background-image: literal("linear-gradient(")RESIZE_BUTTON literal(")");
+}
+div.cmsTextButton, div.cmsTransparentButton, div.cmsMenuButton, div.cmsImageButton {
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+/** Button size styles. */
+div.cmsButtonMedium div.html-face {
+	font-size: value("constants.css.fontSize");
+	line-height: value("constants.css.lineHeight");
+}
+div.cmsButtonSmall div.html-face {
+	font-size: value("constants.css.fontSizeSmall");
+	line-height: value("constants.css.lineHeightSmall");
+}
+div.cmsButtonBig div.html-face {
+	font-size: value("constants.css.fontSizeBig");
+	line-height: value("constants.css.lineHeightBig");
+}
+
+/** General styling for all buttons (don't let the background expand the button height and position it in the middle). */
+div.cmsTextButton, div.cmsTransparentButton, div.cmsMenuButton, div.cmsImageButton {
+	height:auto !important;
+	background-position:50% 50% !important;
+	background-color:transparent;
+	vertical-align:middle;
+	outline:none;
+	cursor:pointer;
+	display:inline-block;
+	text-align:center;
+    font-weight:bold;
+    user-select: none;
+}
+
+
+
+/** Specific button styles (text-, transparent-, menu- and image-Button). */
+@sprite div.cmsTextButton {
+	gwt-image:"backgrounds.stateBackground";
+    border:1px solid value("constants.css.borderColor");
+    padding:3px 8px;
+}
+div.cmsMenuButton, div.cmsImageButton {
+    border:1px solid transparent;
+    padding:2px 4px; 
+}
+div.cmsTransparentButton {
+    vertical-align:top;
+}
+
+/** IE correction. */
+@if user.agent ie6 {
+	div.cmsTextButton.cmsState, div.cmsTransparentButton.cmsState, div.cmsMenuButton.cmsState, div.cmsImageButton.cmsState {
+		display:inline;
+	}
+	div.cmsMinWidth div.html-face {
+		overflow:visible;
+	}
+}
+
+/**
+ * State depended styles.
+ */
+
+/** Set a general text color for all disabled buttons. */
+div.cmsState-up-disabled div.html-face, div.cmsState-down-disabled div.html-face {
+	color:value("constants.css.textColorDisabledButton") !important;
+}
+/** Text-Button:If no button style is set use the default state behavior. */
+div.cmsTextButton.cmsState-up-disabled, div.cmsTextButton.cmsState-down-disabled {
+    background-color:value("constants.css.backgroundColorStateDisabled");
+}
+div.cmsTextButton.cmsState-up {
+	background-color:value("constants.css.backgroundColorStateStandard");
+} 
+div.cmsTextButton.cmsState-down-hovering, div.cmsTextButton.cmsState-up-hovering {
+	background-color:value("constants.css.backgroundColorStateHover");
+}
+div.cmsTextButton.cmsState-down {
+	background-color:value("constants.css.backgroundColorStateActive");
+}
+/** Image-Button:Only show a border and background for the hover- and the down-state. */
+@sprite div.cmsImageButton.cmsState-down-hovering, div.cmsImageButton.cmsState-up-hovering {
+	gwt-image:"backgrounds.stateBackground"; 
+	background-color:value("constants.css.backgroundColorStateHover");
+	border-color:value("constants.css.borderColor");
+}
+@sprite div.cmsImageButton.cmsState-down {
+	gwt-image:"backgrounds.stateBackground"; 
+	background-color:value("constants.css.backgroundColorStateActive");
+	border-color:value("constants.css.borderColor");
+}
+/** Menu-Button:Only show a border and background for the hover-state. */
+@sprite div.cmsMenuButton.cmsState-down-hovering, div.cmsMenuButton.cmsState-up-hovering {
+	gwt-image:"backgrounds.stateBackground"; 
+	background-color:value("constants.css.backgroundColorStateHover");
+	border-color:value("constants.css.borderColor");
+}
+
+/**
+ * Color sprites.
+ */
+div.red div.html-face {
+	color:value("constants.css.textColorDarkButton");
+}
+@sprite div.red.cmsState-up {
+	gwt-image:"inputImages.buttonRedUpBackground"; 
+}
+@sprite div.red.cmsState-down {
+	gwt-image:"inputImages.buttonRedDownBackground";
+}
+@sprite div.red.cmsState-up-disabled, div.red.cmsState-down-disabled {
+	gwt-image:"inputImages.buttonDisabledBackground";
+}
+@sprite div.red.cmsState-up-hovering, div.red.cmsState-down-hovering {
+	gwt-image:"inputImages.buttonRedHoverBackground"; 
+}
+
+div.gray div.html-face {
+	color:value("constants.css.textColorDarkButton");
+}
+@sprite div.gray.cmsState-up {
+	gwt-image:"inputImages.buttonGrayUpBackground"; 
+}
+@sprite div.gray.cmsState-down {
+	gwt-image:"inputImages.buttonGrayDownBackground";
+}
+@sprite div.gray.cmsState-up-disabled, div.gray.cmsState-down-disabled {
+	gwt-image:"inputImages.buttonDisabledBackground";
+}
+@sprite div.gray.cmsState-up-hovering, div.gray.cmsState-down-hovering {
+	gwt-image:"inputImages.buttonGrayHoverBackground"; 
+}
+
+div.blue div.html-face {
+	color:value("constants.css.textColorDarkButton");
+}
+@sprite div.blue.cmsState-up {
+	gwt-image:"inputImages.buttonBlueUpBackground"; 
+}
+@sprite div.blue.cmsState-down {
+	gwt-image:"inputImages.buttonBlueDownBackground";
+}
+@sprite div.blue.cmsState-up-disabled, div.blue.cmsState-down-disabled {
+	gwt-image:"inputImages.buttonDisabledBackground";
+}
+@sprite div.blue.cmsState-up-hovering, div.blue.cmsState-down-hovering {
+	gwt-image:"inputImages.buttonBlueHoverBackground"; 
+}
+
+div.yellow div.html-face {
+	color:value("constants.css.textColorLightButton");
+}
+@sprite div.yellow.cmsState-up {
+	gwt-image:"inputImages.buttonYellowUpBackground"; 
+}
+@sprite div.yellow.cmsState-down {
+	gwt-image:"inputImages.buttonYellowDownBackground";
+}
+@sprite div.yellow.cmsState-up-disabled, div.yellow.cmsState-down-disabled {
+	gwt-image:"inputImages.buttonDisabledBackground";
+}
+@sprite div.yellow.cmsState-up-hovering, div.yellow.cmsState-down-hovering {
+	gwt-image:"inputImages.buttonYellowHoverBackground"; 
+}
+
+div.green div.html-face {
+	color:value("constants.css.textColorDarkButton");
+}
+@sprite div.green.cmsState-up {
+	gwt-image:"inputImages.buttonGreenUpBackground"; 
+}
+@sprite div.green.cmsState-down {
+	gwt-image:"inputImages.buttonGreenDownBackground";
+}
+@sprite div.green.cmsState-up-disabled, div.green.cmsState-down-disabled {
+	gwt-image:"inputImages.buttonDisabledBackground";
+}
+@sprite div.green.cmsState-up-hovering, div.green.cmsState-down-hovering {
+	gwt-image:"inputImages.buttonGreenHoverBackground"; 
+}
+
+div.black div.html-face {
+	color:value("constants.css.textColorDarkButton");
+}
+@sprite div.black.cmsState-up {
+	gwt-image:"inputImages.buttonBlackUpBackground"; 
+}
+@sprite div.black.cmsState-down {
+	gwt-image:"inputImages.buttonBlackDownBackground";
+}
+@sprite div.black.cmsState-up-disabled, div.black.cmsState-down-disabled {
+	gwt-image:"inputImages.buttonDisabledBackground";
+}
+@sprite div.black.cmsState-up-hovering, div.black.cmsState-down-hovering {
+	gwt-image:"inputImages.buttonBlackHoverBackground"; 
+}

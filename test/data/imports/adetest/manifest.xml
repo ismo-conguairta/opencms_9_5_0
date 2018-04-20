@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<export>
+	<info>
+		<creator>Admin</creator>
+		<opencms_version>8.0.0</opencms_version>
+		<createdate>Thu, 11 Feb 2010 14:06:18 GMT</createdate>
+		<infoproject>Offline</infoproject>
+		<export_version>7</export_version>
+	</info>
+	<files>
+		<file>
+			<destination>containerpage</destination>
+			<type>folder</type>
+			<uuidstructure>469c4a44-bc8a-11de-ad02-99487bd5b80a</uuidstructure>
+			<datelastmodified>Mon, 19 Oct 2009 08:34:54 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Mon, 19 Oct 2009 08:34:54 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties/>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>containerpage/content.html</source>
+			<destination>containerpage/content.html</destination>
+			<type>xmlcontent</type>
+			<uuidstructure>539c8987-bc8a-11de-ad02-99487bd5b80a</uuidstructure>
+			<uuidresource>539c8988-bc8a-11de-ad02-99487bd5b80a</uuidresource>
+			<datelastmodified>Mon, 19 Oct 2009 08:36:19 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Mon, 19 Oct 2009 08:35:16 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties/>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>containerpage/content.xsd</source>
+			<destination>containerpage/content.xsd</destination>
+			<type>plain</type>
+			<uuidstructure>53af9c5a-bc8a-11de-ad02-99487bd5b80a</uuidstructure>
+			<uuidresource>53af9c5b-bc8a-11de-ad02-99487bd5b80a</uuidresource>
+			<datelastmodified>Mon, 19 Oct 2009 08:35:16 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Mon, 19 Oct 2009 08:35:16 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties/>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>containerpage/formatter.jsp</source>
+			<destination>containerpage/formatter.jsp</destination>
+			<type>jsp</type>
+			<uuidstructure>53b6c84d-bc8a-11de-ad02-99487bd5b80a</uuidstructure>
+			<uuidresource>53b6c84e-bc8a-11de-ad02-99487bd5b80a</uuidresource>
+			<datelastmodified>Mon, 19 Oct 2009 08:35:16 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Mon, 19 Oct 2009 08:35:16 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property type="shared">
+					<name>export</name>
+					<value><![CDATA[false]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>containerpage/index.html</source>
+			<destination>containerpage/index.html</destination>
+			<type>containerpage</type>
+			<uuidstructure>53c2af31-bc8a-11de-ad02-99487bd5b80a</uuidstructure>
+			<uuidresource>53c2af32-bc8a-11de-ad02-99487bd5b80a</uuidresource>
+			<datelastmodified>Mon, 19 Oct 2009 08:37:40 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Mon, 19 Oct 2009 08:35:16 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties/>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>containerpage/index2.html</source>
+			<destination>containerpage/index2.html</destination>
+			<type>containerpage</type>
+			<uuidstructure>8d753e43-1714-11df-bcb4-1159e84ec841</uuidstructure>
+			<uuidresource>8d753e44-1714-11df-bcb4-1159e84ec841</uuidresource>
+			<datelastmodified>Mon, 19 Oct 2009 08:37:40 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Thu, 11 Feb 2010 13:51:28 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties/>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<destination>sitemap</destination>
+			<type>folder</type>
+			<uuidstructure>9fc469f0-10a2-11df-9b07-d5d2a77384e9</uuidstructure>
+			<datelastmodified>Wed, 03 Feb 2010 09:00:49 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Wed, 03 Feb 2010 09:00:49 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties/>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>sitemap/sitemap</source>
+			<destination>sitemap/sitemap</destination>
+			<type>sitemap</type>
+			<uuidstructure>ad7c3962-10a2-11df-9b07-d5d2a77384e9</uuidstructure>
+			<uuidresource>ad7c3963-10a2-11df-9b07-d5d2a77384e9</uuidresource>
+			<datelastmodified>Thu, 11 Feb 2010 14:05:21 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Wed, 03 Feb 2010 09:01:12 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property type="shared">
+					<name>template-elements</name>
+					<value><![CDATA[/system/workplace/editors/sitemap/sitemap.jsp]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+		<file>
+			<source>sitemap/subsitemap</source>
+			<destination>sitemap/subsitemap</destination>
+			<type>sitemap</type>
+			<uuidstructure>ed2df165-1714-11df-bcb4-1159e84ec841</uuidstructure>
+			<uuidresource>ed2df166-1714-11df-bcb4-1159e84ec841</uuidresource>
+			<datelastmodified>Thu, 11 Feb 2010 14:05:42 GMT</datelastmodified>
+			<userlastmodified>Admin</userlastmodified>
+			<datecreated>Thu, 11 Feb 2010 13:54:09 GMT</datecreated>
+			<usercreated>Admin</usercreated>
+			<flags>0</flags>
+			<properties>
+				<property type="shared">
+					<name>template-elements</name>
+					<value><![CDATA[/system/workplace/editors/sitemap/sitemap.jsp]]></value>
+				</property>
+			</properties>
+			<relations/>
+			<accesscontrol/>
+		</file>
+	</files>
+</export>

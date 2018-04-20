@@ -1,0 +1,79 @@
+.dragElement{
+	position: relative;
+}
+
+div.dragHandle{
+	position: absolute;
+	z-index: value("constants.css.zIndexInline");
+	top: 7px;
+	right: 3px;
+	padding: 2px;
+	text-align: right;
+	cursor: pointer;
+}
+
+.dragging iframe{
+		visibility: hidden !important;
+}
+
+.dragStarted, .dragPlaceholder{}
+
+
+
+.currentTarget{
+	position: relative;
+}
+
+.dragTarget.dragging{
+	min-height: 25px;
+}
+.dragTarget.dragging:empty{
+	margin-bottom: 10px;
+}
+
+/** Following is a clear-fix for containers with floated content, forcing the container to enclose its content.
+    @see http://www.positioniseverything.net/easyclearing.html */
+.dragTarget.clearFix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.dragElementBackground{
+	background-color: value("constants.css.backgroundColorDialog");
+}
+.dragElementBorder{
+	border: 1px solid value("constants.css.borderColor");
+}
+.dragGroupContainer{}
+
+.overlayShow .placeholderOverlay{
+	display: block;
+}
+
+.dragOverlay{
+	position: fixed;
+	z-index: value("constants.css.zIndexPopup");
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	background: transparent;
+}
+.dragOverlay{
+	opacity: 0;
+}
+
+@sprite .placeholderOverlay{
+	gwt-image: 'otherImages.placeholderImage';
+	display: none;
+	position:absolute;
+	z-index: value("constants.css.zIndexInline");
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	
+}

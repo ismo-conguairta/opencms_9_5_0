@@ -1,0 +1,44 @@
+.highlightBox{
+	position: absolute;
+	z-index: value("constants.css.zIndexHighlighting");
+	background: transparent;
+}
+
+
+/** Opacity filter somehow hides the hightlighting in IE7 and IE8, will not use it for now. */
+.highlightBox {
+	opacity: 0.6;
+}
+
+.highlightBox div{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+
+@sprite .colorRed .borderLeft{
+	gwt-image: 'borders.leftChangedBorderHighlight';
+}
+@sprite .colorRed .borderTop{
+	gwt-image: 'borders.topChangedBorderHighlight';
+}
+@sprite .colorRed .borderBottom{
+	gwt-image: 'borders.bottomChangedBorderHighlight';
+}
+@sprite .colorRed .borderRight{
+	gwt-image: 'borders.rightChangedBorderHighlight';
+}
+
+@sprite .colorBlue .borderLeft{
+	gwt-image: 'borders.leftNewBorderHighlight';
+}
+@sprite .colorBlue .borderTop{
+	gwt-image: 'borders.topNewBorderHighlight';
+}
+@sprite .colorBlue .borderBottom{
+	gwt-image: 'borders.bottomNewBorderHighlight';
+}
+@sprite .colorBlue .borderRight{
+	gwt-image: 'borders.rightNewBorderHighlight';
+}

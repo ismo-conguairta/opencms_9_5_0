@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<export>
+  <info>
+    <creator>Admin</creator>
+    <opencms_version>9.0.0</opencms_version>
+    <createdate>Thu, 11 Mar 2010 08:48:38 GMT</createdate>
+    <infoproject>Offline</infoproject>
+    <export_version>7</export_version>
+  </info>
+  <module>
+    <name>org.opencms.ade.containerpage</name>
+    <nicename><![CDATA[OpenCms 9 ADE Containerpade Editor]]></nicename>
+    <group>OpenCms ADE</group>
+    <class/>
+    <description><![CDATA[The containerpage editor.<br>
+		<i>&copy; 2014 by Alkacon Software GmbH (http://www.alkacon.com).</i>]]></description>
+    <version>9.5.0</version>
+    <authorname><![CDATA[Alkacon Software GmbH]]></authorname>
+    <authoremail><![CDATA[info@alkacon.com]]></authoremail>
+    <datecreated/>
+    <userinstalled/>
+    <dateinstalled/>
+    <dependencies>
+      <dependency name="org.opencms.ade.config" version="9.0.0"/>
+    </dependencies>
+    <exportpoints>
+      <exportpoint uri="/system/modules/org.opencms.ade.containerpage/resources/" destination="resources/ade/"/>
+    </exportpoints>
+    <resources>
+      <resource uri="/system/modules/org.opencms.ade.containerpage/"/>
+    </resources>
+    <resourcetypes/>
+    <explorertypes/>
+  </module>
+  <files>
+    <file>
+      <destination>system</destination>
+      <type>folder</type>
+      <uuidstructure>a815f67e-2b6f-11df-b6ae-2393f34d19cc</uuidstructure>
+      <datelastmodified>Tue, 09 Mar 2010 11:34:00 GMT</datelastmodified>
+      <userlastmodified>Admin</userlastmodified>
+      <datecreated>Tue, 09 Mar 2010 11:34:00 GMT</datecreated>
+      <usercreated>Admin</usercreated>
+      <flags>0</flags>
+      <properties/>
+      <relations/>
+      <accesscontrol>
+        <accessentry>
+          <uuidprincipal>ROLE.WORKPLACE_USER</uuidprincipal>
+          <flags>514</flags>
+          <permissionset>
+            <allowed>1</allowed>
+            <denied>0</denied>
+          </permissionset>
+        </accessentry>
+      </accesscontrol>
+    </file>
+    <file>
+      <destination>system/modules</destination>
+      <type>folder</type>
+      <uuidstructure>a8ae8d37-2b6f-11df-b6ae-2393f34d19cc</uuidstructure>
+      <datelastmodified>Tue, 09 Mar 2010 11:34:01 GMT</datelastmodified>
+      <userlastmodified>Admin</userlastmodified>
+      <datecreated>Tue, 09 Mar 2010 11:34:01 GMT</datecreated>
+      <usercreated>Admin</usercreated>
+      <flags>0</flags>
+      <properties/>
+      <relations/>
+      <accesscontrol>
+        <accessentry>
+          <uuidprincipal>ROLE.WORKPLACE_USER</uuidprincipal>
+          <flags>514</flags>
+          <permissionset>
+            <allowed>5</allowed>
+            <denied>0</denied>
+          </permissionset>
+        </accessentry>
+      </accesscontrol>
+    </file>
+    <file>
+      <destination>system/modules/org.opencms.ade.containerpage</destination>
+      <type>folder</type>
+      <uuidstructure>acc4446c-2ce9-11df-a5f1-2393f34d19cc</uuidstructure>
+      <datelastmodified>Thu, 11 Mar 2010 08:39:58 GMT</datelastmodified>
+      <userlastmodified>Admin</userlastmodified>
+      <datecreated>Thu, 11 Mar 2010 08:39:58 GMT</datecreated>
+      <usercreated>Admin</usercreated>
+      <flags>0</flags>
+      <properties/>
+      <relations/>
+      <accesscontrol/>
+    </file>
+    <file>
+      <destination>system/modules/org.opencms.ade.containerpage/formatters</destination>
+      <type>folder</type>
+      <uuidstructure>d2ebf430-761e-11e0-bd7f-9ffeadaf4d46</uuidstructure>
+      <datelastmodified>Wed, 04 May 2011 07:19:18 GMT</datelastmodified>
+      <userlastmodified>Admin</userlastmodified>
+      <datecreated>Wed, 04 May 2011 07:19:18 GMT</datecreated>
+      <usercreated>Admin</usercreated>
+      <flags>0</flags>
+      <properties/>
+      <relations/>
+      <accesscontrol/>
+    </file>
+    <file>
+      <source>system/modules/org.opencms.ade.containerpage/formatters/group-container.jsp</source>
+      <destination>system/modules/org.opencms.ade.containerpage/formatters/group-container.jsp</destination>
+      <type>jsp</type>
+      <uuidstructure>e7029fa2-761e-11e0-bd7f-9ffeadaf4d46</uuidstructure>
+      <uuidresource>e7029fa3-761e-11e0-bd7f-9ffeadaf4d46</uuidresource>
+      <datelastmodified>Wed, 04 May 2011 07:20:45 GMT</datelastmodified>
+      <userlastmodified>Admin</userlastmodified>
+      <datecreated>Wed, 04 May 2011 07:19:51 GMT</datecreated>
+      <usercreated>Admin</usercreated>
+      <flags>0</flags>
+      <properties>
+        <property>
+          <name>Title</name>
+          <value><![CDATA[Formatter for group-containers]]></value>
+        </property>
+        <property type="shared">
+          <name>export</name>
+          <value><![CDATA[false]]></value>
+        </property>
+      </properties>
+      <relations/>
+      <accesscontrol/>
+    </file>
+    <file>
+      <source>system/modules/org.opencms.ade.containerpage/formatters/function.jsp</source>
+      <destination>system/modules/org.opencms.ade.containerpage/formatters/function.jsp</destination>
+      <type>jsp</type>
+      <uuidstructure>087ba7c9-e7fc-4336-acb8-d3416a4eb1fd</uuidstructure>
+      <uuidresource>087ba7c9-e7fc-4336-acb8-d3416a4eb1fe</uuidresource>
+      <datelastmodified>Wed, 04 May 2011 07:20:45 GMT</datelastmodified>
+      <userlastmodified>Admin</userlastmodified>
+      <datecreated>Wed, 04 May 2011 07:19:51 GMT</datecreated>
+      <usercreated>Admin</usercreated>
+      <flags>0</flags>
+      <properties>
+        <property>
+          <name>cache</name>
+          <value><![CDATA[container-element;locale]]></value>
+        </property>
+      </properties>
+      <relations/>
+      <accesscontrol/>
+    </file>
+    <file>
+      <source>system/modules/org.opencms.ade.containerpage/.config</source>
+      <destination>system/modules/org.opencms.ade.containerpage/.config</destination>
+      <type>module_config</type>
+      <uuidstructure>c70eacc4-a19d-11e0-bf43-03f9b7261207</uuidstructure>
+      <uuidresource>c70eacc5-a19d-11e0-bf43-03f9b7261207</uuidresource>
+      <datelastmodified>Tue, 28 Jun 2011 15:48:01 GMT</datelastmodified>
+      <userlastmodified>Admin</userlastmodified>
+      <datecreated>Tue, 28 Jun 2011 15:46:24 GMT</datecreated>
+      <usercreated>Admin</usercreated>
+      <flags>0</flags>
+      <properties>
+        <property>
+          <name>locale</name>
+          <value><![CDATA[en]]></value>
+        </property>
+        <property>
+          <name>locale-available</name>
+          <value><![CDATA[en]]></value>
+        </property>
+      </properties>
+      <relations/>
+      <accesscontrol/>
+    </file>
+    <file>
+      <source>system/modules/org.opencms.ade.containerpage/containerpage_include.jsp</source>
+      <destination>system/modules/org.opencms.ade.containerpage/containerpage_include.jsp</destination>
+      <type>jsp</type>
+      <uuidstructure>d3aa3d37-4245-11df-94f0-2393f34d19cc</uuidstructure>
+      <uuidresource>d3aa3d38-4245-11df-94f0-2393f34d19cc</uuidresource>
+      <datelastmodified>Wed, 07 Apr 2010 13:13:17 GMT</datelastmodified>
+      <userlastmodified>Admin</userlastmodified>
+      <datecreated>Wed, 07 Apr 2010 13:02:31 GMT</datecreated>
+      <usercreated>Admin</usercreated>
+      <flags>0</flags>
+      <properties>
+        <property type="shared">
+          <name>export</name>
+          <value><![CDATA[false]]></value>
+        </property>
+      </properties>
+      <relations/>
+      <accesscontrol/>
+    </file>
+    <file>
+      <destination>system/modules/org.opencms.ade.containerpage/resources</destination>
+      <type>folder</type>
+      <uuidstructure>15f8a302-2cf5-11df-a5f1-2393f34d19cc</uuidstructure>
+      <datelastmodified>Thu, 11 Mar 2010 10:01:39 GMT</datelastmodified>
+      <userlastmodified>Admin</userlastmodified>
+      <datecreated>Thu, 11 Mar 2010 10:01:39 GMT</datecreated>
+      <usercreated>Admin</usercreated>
+      <flags>0</flags>
+      <properties/>
+      <relations/>
+      <accesscontrol/>
+    </file>
+    <file>
+      <destination>system/modules/org.opencms.ade.containerpage/resources/containerpage</destination>
+      <type>folder</type>
+      <uuidstructure>f0cad3da-71ad-11e0-883b-cd21a79dc8d2</uuidstructure>
+      <datelastmodified>Thu, 28 Apr 2011 15:41:10 GMT</datelastmodified>
+      <userlastmodified>Admin</userlastmodified>
+      <datecreated>Thu, 28 Apr 2011 15:41:10 GMT</datecreated>
+      <usercreated>Admin</usercreated>
+      <flags>0</flags>
+      <properties/>
+      <relations/>
+      <accesscontrol/>
+    </file>
+  </files>
+</export>

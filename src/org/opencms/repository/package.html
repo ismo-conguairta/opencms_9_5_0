@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<!--
+
+ This library is part of OpenCms -
+ the Open Source Content Management System
+
+ Copyright (c) Alkacon Software GmbH (http://www.alkacon.com)
+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+
+ For further information about Alkacon Software GmbH, please see the
+ company website: http://www.alkacon.com
+
+ For further information about OpenCms, please see the
+ project website: http://www.opencms.org
+
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+-->
+</head>
+<body bgcolor="white">
+
+Package contains all classes and interfaces needed to create or use a repository to
+access the resources in the VFS.<p>
+
+A repository is an set of interfaces (and their implementations) to create a simple
+access to the resources in the VFS of OpenCms. The repositories are configured in the
+<code>opencms-importexport.xml</code>. The {@link org.opencms.file.wrapper.CmsObjectWrapper} 
+is used by the repositories for the access to the VFS. So it is possible to configure 
+the repositories to use one or more implementations of the 
+{@link org.opencms.file.wrapper.I_CmsResourceWrapper} to change the view to the resources
+in the VFS. Additionaly it is possible to define filters to include or exclude files and
+folders form being displayed.<p>
+
+Use the {@link org.opencms.repository.CmsRepositoryManager} to get a configured 
+{@link org.opencms.repository.I_CmsRepository}. There you get a
+{@link org.opencms.repository.I_CmsRepositorySession} through login in. With that session 
+you will get the basic file and folder operations to the resources in the VFS of OpenCms.<p>
+
+Example:<br/>
+<code>
+	I_CmsRepository repository = OpenCms.getRepositoryManager().getRepository(repository_name);<br/>
+	I_CmsRepositorySession session = repository.login(username, password);
+</code><p>
+
+@since 6.2.4
+
+@see org.opencms.repository.I_CmsRepository
+@see org.opencms.repository.I_CmsRepositorySession
+</body>
+</html>

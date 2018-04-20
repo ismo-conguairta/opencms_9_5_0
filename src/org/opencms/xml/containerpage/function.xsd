@@ -1,0 +1,48 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    
+    <xsd:include schemaLocation="opencms://opencms-xmlcontent.xsd" />
+    <xsd:include schemaLocation="opencms://system/modules/org.opencms.ade.containerpage/schemas/parameter.xsd"  />
+    <xsd:include schemaLocation="opencms://system/modules/org.opencms.ade.containerpage/schemas/container_settings.xsd" />
+    <xsd:include schemaLocation="opencms://system/modules/org.opencms.ade.containerpage/schemas/setting_config.xsd" />
+    <xsd:include schemaLocation="opencms://system/modules/org.opencms.ade.containerpage/schemas/function_format.xsd" />
+    
+    <xsd:element name="DynamicFunctions" type="OpenCmsDynamicFunctions" />
+    
+    <xsd:complexType name="OpenCmsDynamicFunctions">
+        <xsd:sequence>
+            <xsd:element name="DynamicFunction" type="OpenCmsDynamicFunction" minOccurs="0" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="OpenCmsDynamicFunction">
+        <xsd:sequence>
+        	<xsd:element name="Title" type="OpenCmsString" minOccurs="1" maxOccurs="1" />
+        	<xsd:element name="Description" type="OpenCmsString" minOccurs="1" maxOccurs="1" />
+        	<xsd:element name="FunctionProvider" type="OpenCmsVfsFile" minOccurs="1" maxOccurs="1" />
+        	<xsd:element name="Parameter" type="OpenCmsDynamicFunctionParameter" minOccurs="0" maxOccurs="unbounded" />
+        	<xsd:element name="ContainerSettings" type="OpenCmsContainerSettings" minOccurs="0" maxOccurs="1" />
+	       	<xsd:element name="AdditionalFormat" type="OpenCmsAdditionalFormat" minOccurs="0" maxOccurs="unbounded" />
+        	<xsd:element name="SettingConfig" type="OpenCmsDynamicFunctionSettingConfig" minOccurs="0" maxOccurs="unbounded" />
+       </xsd:sequence>
+        <xsd:attribute name="language" type="OpenCmsLocale" use="optional" />
+    </xsd:complexType>
+
+    <xsd:annotation>
+        <xsd:appinfo>
+          <handler class="org.opencms.xml.containerpage.CmsXmlDynamicFunctionHandler" />
+          	<resourcebundle name="org.opencms.xml.containerpage.messages"/>
+         	<mappings>
+				<mapping element="Title" mapto="property:Title" />
+				<mapping element="Description" mapto="property:Description" />
+			</mappings>
+			<tabs>
+				<tab element="Title" name="TabGeneral" collapse="false" />
+				<tab element="SettingConfig" name="TabSettings" collapse="false" />
+			</tabs>
+			<defaults>
+				<default element="SettingConfig/Type" value="string" />
+			</defaults>
+        </xsd:appinfo>        
+    </xsd:annotation>
+
+</xsd:schema>

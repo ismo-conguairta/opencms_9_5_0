@@ -1,0 +1,680 @@
+@external gwt-ToggleButton, gwt-SuggestBoxPopup, item-selected, cmsState-up-disabled, cmsState-down-disabled, cmsState-up, cmsState-up-hovering, cmsState-down-hovering, cmsState-down, cmsState-up-disabled, cmsState-down-disabled;
+
+@external html-face;
+
+.alignCheckboxBottom.alignCheckboxBottom.alignCheckboxBottom.alignCheckboxBottom *, .alignCheckboxBottom.alignCheckboxBottom.alignCheckboxBottom.alignCheckboxBottom { 
+	vertical-align: baseline;  
+}
+
+.alignCheckboxBottom.alignCheckboxBottom.alignCheckboxBottom.alignCheckboxBottom .html-face > span:first-child { 
+	vertical-align: -3px; 
+}
+
+
+
+
+/* inner text box of the text box widget */
+input.textBox {
+	border: none;
+	width: 98%;
+	background: transparent;
+	padding: 0px;
+	margin: 0px;
+	border-radius: value("constants.css.borderRadius");
+	color: value("constants.css.textColor");
+	line-height: value("constants.css.lineHeight");
+	font-size: value("constants.css.fontSize");
+	box-shadow:none;
+	outline: none;
+	display: inline;
+	height: auto;
+	vertical-align: baseline;
+}
+
+.comboBoxOpener input {
+	outline: none;
+}
+
+input.textBox:focus{
+	box-shadow:none;
+}
+
+.highTextBoxes .textBox {
+	height: 20px;
+}
+
+input.textboxGhostMode {
+	font-style: oblique;
+	color: value("constants.css.textColorDisabled") /*!important*/;
+}
+
+.textBoxPanelWhite {
+	background-color: white; 
+}
+
+
+
+.textBoxPanelDisabled {
+	background-color: value("constants.css.backgroundColorDisabled");
+}
+
+.textBoxPanelDisabled * {
+	color: value("constants.css.textColorDisabled");
+	cursor: default;
+}
+
+.showDisabledAsGhostMode .textBoxPanelDisabled { 
+	background-color: white;
+}
+
+.showDisabledAsGhostMode .textBoxPanelDisabled input {
+	font-style: oblique; 
+	color: value("constants.css.textColorDisabled");
+}
+	
+	
+	
+
+
+.textBoxPanelError {
+	border: 1px solid value("constants.css.borderColorHighlight");
+	background-color: value("constants.css.backgroundColorInputError");
+	overflow:hidden;
+}
+
+
+
+.weakText * {
+	font-style: oblique !important;
+	color: value("constants.css.textColorDisabled") !important;
+}
+
+.textBoxWidget, .checkBox {}
+
+.checkBox .html-face {
+	font-weight: normal; 
+}
+
+input.textBoxReadOnly {
+	background-color: value("constants.css.backgroundColorDisabled");
+}
+
+.textBoxPanel {
+	border: 1px solid value("constants.css.borderColor");
+	overflow:hidden;
+}
+
+
+.colorPicker {
+background-color: transparent;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: none;
+    display: block;
+    height: 20px;
+    width: auto;
+}
+
+
+
+
+div.textArea {
+    overflow:hidden;
+	position: relative;
+}
+div.textArea > div.disableTextArea {
+	position: absolute;
+	toP: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	background: #FFFFFF;
+	opacity: 0.1;
+}
+.textAreaBoxPanel{
+	border: 1px solid value("constants.css.borderColor");
+}
+div.textArea textarea{
+	border:none;
+	font-family: value("constants.css.fontFamilyMono");
+}
+
+.checkBox .gwt-ToggleButton {
+	outline: none;
+}
+
+@if user.agent ie6 {
+	.checkBox * {
+		display: inline;
+	}
+}
+
+@sprite .cmsState-up-disabled .checkBoxImage {
+	gwt-image: "inputImages.checkboxUncheckedDisabled";
+}
+
+@sprite .linkEdit {
+	gwt-image: "baseImages.icons.editIconActive";
+}
+
+@sprite .inherited {
+	gwt-image: "baseImages.icons.inheritedIcon";
+}
+
+@sprite .cmsState-down-disabled .checkBoxImage {
+	gwt-image: "inputImages.checkboxCheckedDisabled";
+}
+@sprite .cmsState-up .checkBoxImage, .checkBoxImageUnchecked {
+	gwt-image: "inputImages.checkboxUnchecked";
+}
+@sprite .cmsState-down .checkBoxImage, .checkBoxImageChecked {
+	gwt-image: "inputImages.checkboxChecked";
+}
+@sprite .cmsState-up-hovering .checkBoxImage {
+	gwt-image: "inputImages.checkboxUncheckedHover";
+}
+@sprite .cmsState-down-hovering .checkBoxImage {
+	gwt-image: "inputImages.checkboxCheckedHover";
+}
+
+
+@sprite .triState .triStateOn {
+	gwt-image: "inputImages.checkboxChecked";
+	
+}
+
+@sprite .triState.cmsState-down-hovering .triStateOn,.triState.cmsState-up-hovering .triStateOn {
+	gwt-image: "inputImages.checkboxCheckedHover";
+}
+
+
+@sprite .triState .triStateOff {
+	gwt-image: "inputImages.checkboxUnchecked";
+	
+}
+
+@sprite .triState.cmsState-up-hovering .triStateOff, .triState.cmsState-down-hovering .triStateOff {
+	gwt-image: "inputImages.checkboxUncheckedHover";
+}
+
+
+@sprite .triState .triStateMedium {
+	gwt-image: "inputImages.checkboxCheckedSome";
+}
+
+@sprite .triState.cmsState-up-hovering .triStateMedium, .triState.cmsState-down-hovering .triStateMedium {
+	gwt-image: "inputImages.checkboxCheckedSomeHover";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.radioButton .gwt-ToggleButton {
+	outline: none;
+}
+
+@if user.agent ie6 {
+	.checkBox * {
+		display: inline;
+	}
+}
+
+
+
+@sprite .cmsState-up-disabled .radioButtonImage {
+	gwt-image: "inputImages.radioUncheckedDisabled";
+}
+
+@sprite .cmsState-down-disabled .radioButtonImage {
+	gwt-image: "inputImages.radioCheckedDisabled";
+}
+
+@sprite .cmsState-up .radioButtonImage {
+	gwt-image: "inputImages.radioUnchecked";
+}
+
+@sprite .cmsState-down .radioButtonImage {
+	gwt-image: "inputImages.radioChecked";
+}
+
+@sprite .cmsState-up-hovering .radioButtonImage {
+	gwt-image: "inputImages.radioUncheckedHover";
+}
+
+@sprite .cmsState-down-hovering .radioButtonImage {
+	gwt-image: "inputImages.radioCheckedHover";
+}
+	
+/* Style for edited text box */
+.changed{
+	color: value("constants.css.textColorChanged") !important;
+}
+
+
+
+
+.radioButtonGroup *, .multiCheckBox *, .textBoxPanel *, .formLabel, .formWidgetContainer * {
+	font-size: inherit;
+	font-family: inherit;
+	color: value("constants.css.textColor");
+}
+
+
+
+
+
+
+.formLabel {
+	font-weight: normal;
+}
+
+.selectBoxRoot *, .selectBoxSelector * {
+	font-family: value("constants.css.fontFamily");
+	font-size: value("constants.css.fontSize");
+}
+
+
+
+.selectBoxSelector div, div.gwt-SuggestBoxPopup > div{
+	border-radius: value("constants.css.borderRadius");
+}
+
+div.gwt-SuggestBoxPopup{
+	border: 1px solid value("constants.css.borderColor");
+	border-top-width: 0px;
+	background-color: value("constants.css.backgroundColorDialog");
+	padding: 2px 0px;
+	z-index: value("constants.css.zIndexPopup");
+	border-bottom-left-radius: value("constants.css.borderRadius");
+	border-bottom-right-radius: value("constants.css.borderRadius");
+	margin-left: -5px;
+}
+
+
+div.error, .error {
+	text-align: left;
+	border: 1px solid value("constants.css.borderColorHighlight");
+	background-color: value("constants.css.backgroundColorInfo");
+	color: value("constants.css.textColor");
+    margin-top: 2px;
+    padding: 3px;
+    position: absolute;
+    z-index: value("constants.css.zIndexInline");
+}
+
+.selectBoxRoot.selectBoxDisabled .selectBoxSelected{
+	background-color: value("constants.css.backgroundColorStateDisabled");
+	color: value("constants.css.textColorDisabled");
+	border-color: value("constants.css.textColorDisabled");
+}
+.selectBoxRoot.selectBoxDisabled .selectBoxSelected *{
+	color: value("constants.css.textColorDisabled");
+}
+
+@sprite .openerNoHover.selectBoxSelected {
+	width: auto; 
+	height:auto;
+	min-height: 0px;
+	border: 1px solid value("constants.css.borderColor");
+	gwt-image: "backgrounds.stateBackground";
+	background-position: 50% 50%;
+	outline: none;
+	background-color: value("constants.css.backgroundColorStateStandard");
+}
+
+.comboBox .openerNoHover.selectBoxSelected, .comboBox .openerHover.selectBoxSelected { 
+	background-image: none;
+	background-color: white; 
+}
+
+
+@sprite .openerHover.selectBoxSelected {
+	width: auto;
+	height: auto;
+	min-height: 0px;
+	cursor: pointer;
+	border: 1px solid value("constants.css.borderColor");
+	gwt-image: "backgrounds.stateBackground";
+	background-position: 50% 50%;
+	outline: none;
+	background-color: value("constants.css.backgroundColorStateHover");
+}
+
+.noSelectionSelectBox .openerNoHover.selectBoxSelected, .noSelectionSelectBox .openerHover.selectBoxSelected {
+	background-image: none !important;
+	font-style: oblique !important; 
+	background-color: white !important; 
+}
+
+/*.noSelectionSelectBox * {
+	background-color: white !important; 
+}*/
+
+.noSelectionSelectBox .selectBoxOpener {
+	color: value("constants.css.textColorDisabled") !important; 
+}
+
+div.selectBoxSelector, div.selectorPopup.selectBoxSelector{
+	border: 1px solid value("constants.css.borderColor");
+	background-color: value("constants.css.backgroundColorDialog");
+	padding-bottom: 2px;
+	z-index: value("constants.css.zIndexPopup");
+}
+
+
+
+div.selectorPopup, .selectorPopup * {
+	margin: 0;
+	padding: 0;
+	border: none;
+	color: value("constants.css.textColor");
+	font-family: value("constants.css.fontFamily");
+	font-size: value("constants.css.fontSize");
+	line-height: value("constants.css.lineHeight");
+	background: transparent;
+	text-align: left;
+	height: auto;
+	width: auto;
+	min-height: 0;
+	max-height: none;
+	min-width: 0;
+	max-width: none;
+}
+
+.selectorPopup{
+	z-index: value("constants.css.zIndexPopup");
+}
+
+div.selectBoxCell, div.selectorPopup div.selectBoxSelector div.selectBoxCell{
+	color: value("constants.css.textColor");
+	background-color: value("constants.css.backgroundColorDialog");
+	padding: 1px 5px;
+	cursor: pointer;
+	font-family: value("constants.css.fontFamily");
+	font-size: value("constants.css.fontSize");
+}
+
+div.selectHover, div.selectorPopup.selectBoxSelector div.selectBoxCell.selectHover, div.gwt-SuggestBoxPopup .item-selected{
+	background-color: value("constants.css.backgroundColorHighlight");
+}
+
+.selectIcon { 
+	position: absolute;
+	right: 0;
+	top: 2px;
+}
+
+.selectBoxRoot {
+	/* needed to enable hasLayout in IE (required for reading clientHeight) */
+	min-height: 0px;
+	width: 100%;
+	position: relative;
+}
+
+div.selectBoxOpener {
+	margin: 3px 12px 3px 5px;
+	cursor: pointer;
+}
+
+.comboBoxOpener { 
+   margin: 1px 12px 1px 5px; 
+}  
+
+.selectBoxSelected .comboBoxOpener{
+	border: medium none;
+    color: value("constants.css.textColor");
+    cursor: pointer;
+	font-family: value("constants.css.fontFamily");
+	font-size: value("constants.css.fontSize");
+    height: 16px;
+    padding: 0px 15px 2px 0px;
+    box-shadow: none;
+    background:  value("constants.css.backgroundColorDialog");
+    margin-left: 5px; 
+}
+
+
+div.dataValue {
+	height: 20px;
+	margin-top: 2px;
+	margin-right: 2px;
+	border: 1px solid #7788AA;
+	border-radius: 3px;
+	margin: 0 2px;
+	cursor: pointer;
+	position: relative;
+}
+
+div.categoryScrollPanel{
+	margin-top: 6px;
+	border: 1px solid value("constants.css.borderColor");
+	background-color: value("constants.css.backgroundColorDialog"); 
+}
+
+.disabled div.dataValue{
+	cursor: default;
+}
+
+div.categoryItem{
+	margin-top: 6px;
+}
+
+@def FADER_LEFT_RIGHT literal("left, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%"); 
+@def FADER_TOP_BOTTOM literal("top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,1) 100%");  
+
+div.dataValue{
+	background-image: value("constants.css.gradientFormDialogIE9");
+	background-image: literal("-moz-linear-gradient(")value("constants.css.gradientFormDialog") literal(")");
+	background-image: literal("-ms-linear-gradient(")value("constants.css.gradientFormDialog") literal(")");
+	background-image: literal("-webkit-linear-gradient(")value("constants.css.gradientFormDialog") literal(")");
+	background-image: literal("linear-gradient(")value("constants.css.gradientFormDialog") literal(")");
+}
+div.fader, div.textArea div.fader {
+	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background-image: literal("-moz-linear-gradient(")FADER_LEFT_RIGHT literal(")") !important;
+	background-image: literal("-ms-linear-gradient(")FADER_LEFT_RIGHT literal(")") !important;
+	background-image: literal("-webkit-linear-gradient(")FADER_LEFT_RIGHT literal(")") !important;
+	background-image: literal("linear-gradient(")FADER_LEFT_RIGHT literal(")") !important;
+}
+div.textArea div.fader{
+	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjkwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background-image: literal("-moz-linear-gradient(")FADER_TOP_BOTTOM literal(")") !important;
+	background-image: literal("-ms-linear-gradient(")FADER_TOP_BOTTOM literal(")") !important;
+	background-image: literal("-webkit-linear-gradient(")FADER_TOP_BOTTOM literal(")") !important;
+	background-image: literal("linear-gradient(")FADER_TOP_BOTTOM literal(")") !important;
+} 
+
+div.fader{
+	cursor: pointer;
+    overflow: hidden;
+    height: 17px;
+    width: 40px;
+    position: absolute;
+}
+
+div.selectBoxRoot div.fader{   	
+	bottom: 1px;
+    right: 15px;
+}
+div.selectionInput{
+	border: 1px solid value("constants.css.borderColor");
+	padding: 0px 21px 0px 4px;
+	height: 18px;
+}
+
+div.selectionInput>input[type=text]{
+	height: 18px;
+	width: 100%;
+	outline:none;
+	border: none;
+}
+
+div.selectionInput div.fader{   	
+	right: 21px;
+	bottom: 1px;
+}
+div.selectionInput .opener{
+	position: absolute;
+	right: 2px;
+	bottom: 1px;
+}
+
+div.textArea div.fader{
+	width: auto;
+	border-radius: 0 0 0 3px;
+    bottom: 1px;
+    left:1px;
+    right:12px;
+}
+div.selectionInput{
+	position: relative;
+}
+input.comboBoxOpener:disabled{
+	background-color: #FFFFFF;
+	color: value("constants.css.textColorDisabled");
+	border: value("constants.css.textColorDisabled");
+}
+
+.openerNoHover {}
+.openerHover {
+}
+
+@if user.agent ie6 {
+	.inlineBlock {
+		display: inline;
+	}
+} @else {
+	.inlineBlock {
+		display: inline-block;
+	}
+}
+
+.label {
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.labelTruncated {
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+input.labelInput {
+	background: transparent;
+	border: none;
+	vertical-align: middle;
+}
+	
+.alignBottom {
+	vertical-align: bottom;
+}
+
+div.formRow {
+	margin: 2px 0;
+	position: relative;
+	min-height: 22px;
+}
+
+@sprite .formRowOpenerClosed {
+	gwt-image: "baseImages.plusImage";
+}
+
+
+
+@sprite .formRowOpenerOpen {
+	gwt-image: "baseImages.minusImage";
+}
+
+@eval formLabelWidth org.opencms.gwt.client.ui.input.form.CmsFormRow.getLabelWidth();
+@eval openerWidth org.opencms.gwt.client.ui.input.form.CmsFormRow.getOpenerWidth();
+@eval widgetContainerWidth org.opencms.gwt.client.ui.input.form.CmsFormRow.getWidgetContainerWidth();
+@eval widgetContainerMargin org.opencms.gwt.client.ui.input.form.CmsFormRow.getWidgetContainerLeftMargin();  
+
+div.formOpener {
+	width: openerWidth;
+	float: left;
+	vertical-align: top; 
+}
+
+div.formInfo {
+	margin-left: 5px;
+	margin-top: 5px;
+	margin-bottom: 12px;
+	font-weight: bold; 
+}
+
+div.formLabel { 
+	width: formLabelWidth;
+	overflow: hidden;
+	vertical-align: top;
+	margin-top: 3px;
+	line-height: 16px;
+	float: left;
+}
+
+
+div.formWidgetContainer {
+	width: widgetContainerWidth;
+	margin-left: widgetContainerMargin;
+}
+
+div.separator {
+	width: 100%;
+	height: 1px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	/** Use the border color as background because this CSS class behaves like a border. */
+	background-color: value("constants.css.borderColor");
+}
+
+div.formDescriptionLabel {
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+.subtitleSuffix {
+	font-weight: bold;
+	margin-left: 8px;
+}
+
+.textAreaBox{}
+.selectBoxPopup{}
+
+@def PARENT_GRADIENT literal("left, #FFFFFF 0%, #F4F7F9 80%, #E1E4E8 100%");  
+@def PARENT_GRADIENT_IE9 literal("url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjgwJSIgc3RvcC1jb2xvcj0iI2Y0ZjdmOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlMWU0ZTgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+)");
+	
+.formGradientBackground  {
+	background: #EEEEEE !important;
+ 	background-image: PARENT_GRADIENT_IE9 !important;
+	background-image: literal("-moz-linear-gradient(")PARENT_GRADIENT literal(")") !important;
+	background-image: literal("-ms-linear-gradient(")PARENT_GRADIENT literal(")") !important;
+	background-image: literal("-webkit-linear-gradient(")PARENT_GRADIENT literal(")") !important;
+	background-image: literal("-o-linear-gradient(")PARENT_GRADIENT literal(")") !important;
+	background-image: literal("linear-gradient(")PARENT_GRADIENT literal(")") !important;
+}
+
+.formGradientBackground .fieldset-fieldsetVisible, .formGradientBackground .properties-vfsModeSimplePropertiesBox { 
+	background: transparent !important; 
+}
+
+.formWidgetContainer .checkBox { 
+	margin-top: 2px; 
+}
+
+.multiCheckboxPanel {
+	border: 1px solid value("constants.css.borderColor");
+	overflow:hidden;
+}
+
+
